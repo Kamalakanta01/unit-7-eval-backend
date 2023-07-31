@@ -38,7 +38,7 @@ app.post("/login", async(req,res)=>{
         let pd = userObj.password;
         let result = await bcrypt.compare(password,pd);
         if(result){
-            let token = jwt.sign({userID:userObj._id}, process.env.SECRET_KEY);
+            let token = jwt.sign({userID:userObj._id}, "Eval");
             res.status(200).send({"msg":"Successful",token})
         }else{
             res.send("Wrong credentials")
