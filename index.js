@@ -9,7 +9,6 @@ let app = express();
 app.use(express.json())
 app.use("/blogs",authentication,router)
 
-
 app.post("/signup", async(req,res)=>{
     let {name,email,password}=req.body;
     console.log(req.body);
